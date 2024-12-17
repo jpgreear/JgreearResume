@@ -1,0 +1,74 @@
+body {
+    background-image: url(images/thomas-tastet-hSODeSbvzE0-unsplash.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;}
+.redb {background-color: red;}
+.blueb {background-color: blue;}
+.greenb {background-color: green;}
+.yellowb {background-color: yellow; color:black;}
+.purpleb {background-color: plum;}
+.wheatb {background-color: wheat;}
+.greyb2{background-color: lightslategray;}
+.blackb{background-color: black;}
+.whiteb{background-color: whitesmoke;}
+.title{color: aqua;}
+.centerit {text-align: center;}
+.carousel-caption {background-color: rgba(0, 0, 0, 0.219); /* Semi-transparent background */
+    border-radius: 5px;
+    padding: 2px;}
+.hov:hover{ background-color: lightblue;
+            color: black;
+            }
+.ticket-form {background-color: white; padding: 20px; border-radius: 5px;}
+ul { list-style-type: circle;}
+
+@media (max-width: 375px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-toggler {
+        padding: 10px;
+    }
+    .profile{
+        width: 50%;
+    }
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 1em;
+    }
+    p {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    img {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #button {
+        width: 100%;
+        color: red;
+        font-size: 1rem;
+        margin-top: 1em;
+    }
+    ul {
+        padding-left: 20px;
+    }
+    .greyb2 ul {
+        padding-left: 20px;
+        font-size: 0.9rem;
+    }
+}

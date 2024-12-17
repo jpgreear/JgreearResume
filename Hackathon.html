@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Hackathon Ticket Page</title>
+    <script>
+        function processForm(form) 
+        {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Check password length
+            if (password.length <= 5) 
+            {
+                alert("Password must be 5+ characters.");
+                return false;
+            }
+            // Check if the password starts with a capital letter
+            if (password[0] < 'A' || password[0] > 'Z') 
+            {
+                alert("Password must start with an UpperCase.");
+                return false;
+            }
+            // Check if the password contains at least one digit
+            let digit = false;
+            for (let i = 0; i < password.length; i++) 
+            {
+                if (password[i] >= '0' && password[i] <= '9') {
+                    digit = true;
+                    break;
+                }
+            }
+            if (!digit) {
+                alert("Password must contain at least one digit.");
+                return false;
+            }
+        alert("Thanks " + username + "! We look forward to seeing you");
+        
+            let totalCost = 0;
+            if (form.Jan1.checked) {
+                const qty = parseInt(form.Jan1qty.value || 0);
+                const price = parseFloat(form.Jan1price.value);
+                totalCost += qty * price;
+            }
+            if (form.Mar2.checked) {
+                const qty = parseInt(form.Mar2qty.value || 0);
+                const price = parseFloat(form.Mar2price.value);
+                totalCost += qty * price;
+            }
+            if (form.Aug5.checked) {
+                const qty = parseInt(form.Aug5qty.value || 0);
+                const price = parseFloat(form.Aug5price.value);
+                totalCost += qty * price;
+            }
+            if (form.Sep10.checked) {
+                const qty = parseInt(form.Sep10qty.value || 0);
+                const price = parseFloat(form.Sep10price.value);
+                totalCost += qty * price;
+            }
+        alert("You owe $" + totalCost.toFixed(2));
+        }          
+</script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="pos-f-t">
+                    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey;">
+                        <a class="navbar-brand">JxGTech</a>
+                        <!-- Button for small screens (Hamburger Icon) -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    
+                        <!-- Links that collapse on small screens -->
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Hackathon.html">Tickets</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    
+            </div>
+        </div>
+        <!-- ROW 1: Header and Carousel Images ----------------------------------->
+        <div class="row">
+            <div class="col-md-2">
+                <div id="carouselLeft" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img-fluid" src="images/code.jpg" alt="slide 1" />
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/code2.jpg" alt="slide 2" />
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/code3.jpg" alt="slide 3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 centerit">
+                <h1>JxGTech Hackathon #1738</h1>
+                <p>Join us for an exciting coding challenge!</p>
+            </div>
+
+            <div class="col-md-2">
+                <div id="carouselRight" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100 img-fluid" src="images/ceo1.jpg" alt="CEO Marcus Rashford" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>CEO:<br/>Marcus Rashford</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/ceo2.jpg" alt="CEO Dana White" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>CEO:<br/>Dana White</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/ceo3.jpg" alt="CEO Cole Palmer" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>CEO:<br/>Cole Palmer</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/ceo4.jpg" alt="Wonder Dog" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <p>Judge:<br/>Digit the Wonder Dog</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 2: Agenda and Judges List ----------------------------------------------->
+        <div class="row mt-5">
+
+            <div class="col-md-8">
+                <div class="judges mt-5">
+                    <h3>Judges Panel
+                    </h3>
+                    <ul>
+                        <li>Marcus Rashford - CEO of MRash-Tech: An industry pioneer with over 300 years of experience.</li>
+                        <li>Dana White - CEO of DCode: Expert in software development and agile practices.</li>
+                        <li>Cole Palmer - CEO of ChelseaFC: Leader in AI-driven solutions for business growth.</li>
+                        <li>Digit The Wonder-Dog - Honorary Judge and head sponsor of the event</li>
+                    </ul>
+                </div>
+                <div class="agenda">
+                    <h3>Agenda</h3>
+                    <h5>2025 Event Dates: Jan. 1<sup>st</sup>, Mar. 2<sup>nd</sup>, Aug.5<sup>th</sup>, Sep.10<sup>th</sup> </h5><br/>
+                    <ul>
+                        <li>9:00 AM - Registration and Welcome: Check-in, grab your badge, and network over some coffee and snacks.</li>
+                        <li>10:00 AM - Revolutionary Speech: Hear from industry leaders on innovation and technology trends.</li>
+                        <li>12:00 PM - Lunch Break: Enjoy a variety of meal options while networking with other attendees.</li>
+                        <li>1:00 PM - Hackathon Begins: Collaborate with your team and start building your project! ...Subject: Classified!</li>
+                        <li>5:00 PM - Presentation of Projects: Present your work to the judges and compete for prizes.</li>
+                    </ul>
+                </div>
+                <div class="workshops mt-5">
+                    <h3>Workshops</h3>
+                    <ul>
+                        <li>Getting Started with APIs: Learn how to build and integrate APIs into your project.</li>
+                        <li>Introduction to Machine Learning: A beginner-friendly session on ML concepts.</li>
+                        <li>Debugging Best Practices: Improve your debugging skills with expert tips.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="ticket-form" style="color: black;">
+                    <h3>Hackathon 2024 Tickets<br/></h3>
+                    <h5>Please Enter User/Pass & Select Tickets</h5>
+                    <form style="color: black;" onsubmit="processForm(this); return false;">
+                        <div class="mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input type="text" class="form-control" id="password" placeholder="Enter Password" required>
+                        </div>
+                        
+                        <!-- Event Options -->
+                        <div class="mb-3">
+                            <label class="form-label">Select Event(s) | Choose Qty:</label>
+                            <div>
+                                <input type="checkbox" id="Jan1" name="Jan1">
+                                <label for="Jan1">Jan.1<sup>st</sup> Event: $50</label>
+                                <input type="number" name="Jan1qty" placeholder="Qty" class="form-control d-inline w-25" min="0">
+                                <input type="hidden" name="Jan1price" value="50">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Mar2" name="Mar2">
+                                <label for="Mar2">Mar.2<sup>nd</sup> Event: $60<br/></label>
+                                <input type="number" name="Mar2qty" placeholder="Qty" class="form-control d-inline w-25" min="0">
+                                <input type="hidden" name="Mar2price" value="60">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Aug5" name="Aug5">
+                                <label for="Aug5">Aug.5<sup>th</sup> Event: $70</label>
+                                <input type="number" name="Aug5qty" placeholder="Qty" class="form-control d-inline w-25" min="0">
+                                <input type="hidden" name="Aug5price" value="70">
+                            </div>
+                            <div>
+                                <input type="checkbox" id="Sep10" name="Sep10">
+                                <label for="Sep10">Sep.10<sup>th</sup> Event: $70</label>
+                                <input type="number" name="Sep10qty" placeholder="Qty" class="form-control d-inline w-25" min="0">
+                                <input type="hidden" name="Sep10price" value="70">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
